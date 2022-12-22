@@ -42,7 +42,7 @@ export const News = () => {
             backgroundImage={
               "url(https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z29sZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1350&q=60)"
             }
-            boxShadow="inset 0 0 50rem 1rem #000"
+            boxShadow="inset 0 0 40rem 1rem #000"
             backgroundSize={"cover"}
             backgroundPosition={"center center"}
           >
@@ -56,7 +56,13 @@ export const News = () => {
             </CardHeader>
             <CardBody></CardBody>
             <CardFooter px="3rem">
-              <Flex bg="white" alignItems="center" gap="1rem" p="1rem">
+              <Flex
+                bg="white"
+                alignItems="center"
+                gap="1rem"
+                p="1rem"
+                rounded="5px"
+              >
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.

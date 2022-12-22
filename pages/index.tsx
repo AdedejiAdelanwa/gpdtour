@@ -4,6 +4,8 @@ import styles from "../styles/Home.module.css";
 import { Box, Text } from "@chakra-ui/react";
 import { Navigation } from "../components/Navigation";
 import { Hero } from "../components/Hero";
+import { Open } from "../components/Open";
+import { News } from "../components/News";
 
 export default function Home() {
   return (
@@ -20,7 +22,8 @@ export default function Home() {
       <Box height="100%" pos="relative">
         <Navigation />
         <Hero />
-        <Text>Hi</Text>
+        <Open />
+        <News />
       </Box>
     </>
   );

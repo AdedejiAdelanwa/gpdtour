@@ -7,6 +7,7 @@ import { Hero } from "../components/Hero";
 import { Open } from "../components/Open";
 import { News } from "../components/News";
 import { Upcoming } from "../components/Upcoming";
+import { Sponsors } from "../components/Sponsors";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Open />
         <News />
         <Upcoming />
+        <Sponsors />
       </Box>
     </>
   );

@@ -6,6 +6,7 @@ import { Navigation } from "../components/Navigation";
 import { Hero } from "../components/Hero";
 import { Open } from "../components/Open";
 import { News } from "../components/News";
+import { Upcoming } from "../components/Upcoming";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <Open />
         <News />
+        <Upcoming />
       </Box>
     </>
   );

@@ -72,7 +72,8 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/faqs"
+            href="https://forms.gle/ZDSVRUhJGcbpB3i19"
+            isExternal
           >
             REGRISTRATION
           </Link>

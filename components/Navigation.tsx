@@ -27,7 +27,7 @@ export const Navigation = () => {
         h={["5rem", "7rem", "15rem"]}
       >
         <Box boxSize={["4rem", "6rem", "15rem"]}>
-          <Image src={CompLogo} alt="Picture of the author" />
+          <Image src={CompLogo} alt="PGD tour logo" />
         </Box>
         <Flex
           display={["none", "none", "flex"]}

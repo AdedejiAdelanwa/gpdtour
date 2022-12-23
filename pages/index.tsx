@@ -8,6 +8,8 @@ import { Open } from "../components/Open";
 import { News } from "../components/News";
 import { Upcoming } from "../components/Upcoming";
 import { Sponsors } from "../components/Sponsors";
+import { ProLeaders } from "../components/ProLeaders";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -27,7 +29,9 @@ export default function Home() {
         <Open />
         <News />
         <Upcoming />
+        <ProLeaders />
         <Sponsors />
+        <Footer />
       </Box>
     </>
   );

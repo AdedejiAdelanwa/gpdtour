@@ -66,7 +66,10 @@ const Registration = () => {
           name="description"
           content="a 3-Day golf Tournament which holds between the 26th -28th of January 2023 at Lakowe Lakes and Country Estate, Lagos."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box height="100%" pos="relative" bg="white">
@@ -77,6 +80,7 @@ const Registration = () => {
             h={["auto", "80vh"]}
             bg="white"
             py={["1.5rem", "3rem"]}
+            px="1rem"
           >
             <Heading>Registration </Heading>
             <form style={{ fontSize: "1.6rem", width: "100%" }}>

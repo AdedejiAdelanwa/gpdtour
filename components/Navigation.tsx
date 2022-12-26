@@ -188,7 +188,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/faqs"
+            href="/registration"
           >
             REGRISTRATION
           </Link>

@@ -92,8 +92,8 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="https://forms.gle/ZDSVRUhJGcbpB3i19"
-          isExternal
+          // href="https://forms.gle/ZDSVRUhJGcbpB3i19"
+          href="/registration"
         >
           REGRISTRATION
         </Link>

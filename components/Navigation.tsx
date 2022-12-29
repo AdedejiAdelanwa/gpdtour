@@ -68,7 +68,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/faqs"
+          href="/"
         >
           HOME
         </Link>
@@ -80,7 +80,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/contact"
+          href="/"
         >
           SCHEDULE
         </Link>
@@ -105,7 +105,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/contact"
+          href="/"
         >
           NEWS
         </Link>
@@ -117,7 +117,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/contact"
+          href="/"
         >
           PLAYERS
         </Link>
@@ -128,7 +128,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/contact"
+          href="/"
         >
           STATS
         </Link>
@@ -140,7 +140,7 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/contact"
+          href="/"
         >
           ACCOMODATION
         </Link>
@@ -164,7 +164,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/faqs"
+            href="/"
           >
             HOME
           </Link>
@@ -176,7 +176,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             SCHEDULE
           </Link>
@@ -200,7 +200,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             NEWS
           </Link>
@@ -212,7 +212,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             PLAYERS
           </Link>
@@ -223,7 +223,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             STATS
           </Link>
@@ -235,7 +235,7 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             ACCOMODATION
           </Link>

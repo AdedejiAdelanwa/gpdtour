@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Flex,
@@ -41,7 +43,6 @@ const Registration = () => {
     amount: Number(amount),
     phone,
     name,
-    narration,
     publicKey: "pk_test_3bd1a6f51ba250c214ff525d89ef58af5a9c6a31",
   };
   const onSuccess = () => {
@@ -74,7 +75,19 @@ const Registration = () => {
       </Head>
       <Box height="100%" pos="relative" bg="white">
         <Navigation />
-        <Flex w="100%" justifyContent="center">
+        <VStack w="100%" justifyContent="center" py="2rem">
+          <Alert status="warning" w={["95%", "40%"]} rounded="2px">
+            <AlertIcon />
+            PGD Tours promoted by Meristem is granted irrevocable, nonexclusive,
+            worldwide copyright license to download, copy, modify, distribute,
+            perform, and use photos from Golfing events for free, including for
+            commercial purposes, without permission from or attributing the
+            subject.
+          </Alert>
+          {/* <Text fontSize="1rem" w="40%" bg="rgba(255,204,0,0.3)" p="0.5rem">
+            <span>*</span>
+           
+          </Text> */}
           <VStack
             width={["100%", "30%"]}
             h={["auto", "80vh"]}
@@ -155,7 +168,7 @@ const Registration = () => {
               </Button>
             </form>
           </VStack>
-        </Flex>
+        </VStack>
 
         <Footer />
         <Modal isOpen={isOpen} onClose={onClose} size="3xl" isCentered>

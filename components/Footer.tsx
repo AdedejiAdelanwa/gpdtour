@@ -48,7 +48,7 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/faqs"
+            href="/"
           >
             HOME
           </Link>
@@ -60,7 +60,7 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             SCHEDULE
           </Link>
@@ -85,7 +85,7 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             NEWS
           </Link>
@@ -97,7 +97,7 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/contact"
+            href="/"
           >
             PLAYERS
           </Link>
@@ -134,12 +134,18 @@ export const Footer = () => {
         //alignItems="flex-s"
 
         gap="2rem"
-        px={["1rem", "10rem"]}
+        px={["1rem", "1rem"]}
         color="white"
       >
         <HStack>
           <BiCopyright />
-          <Text>2023 PGD Tour All rights reserved.</Text>
+          <small>
+            PGD Tours promoted by Meristem is granted irrevocable, nonexclusive,
+            worldwide copyright license to download, copy, modify, distribute,
+            perform, and use photos from Golfing events for free, including for
+            commercial purposes, without permission from or attributing the
+            subject.
+          </small>
         </HStack>
 
         <Flex fontSize="1.6rem" gap="1rem">

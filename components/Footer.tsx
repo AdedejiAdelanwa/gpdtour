@@ -75,7 +75,7 @@ export const Footer = () => {
             //href="https://forms.gle/ZDSVRUhJGcbpB3i19"
             href="/registration"
           >
-            REGRISTRATION
+            REGISTRATION
           </Link>
           <Link
             p="1rem"

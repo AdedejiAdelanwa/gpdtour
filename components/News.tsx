@@ -63,14 +63,10 @@ export const News = () => {
                 p="1rem"
                 rounded="5px"
               >
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Quis ipsum suspendisse ultrices gravida.
-                </Text>
+                <Text>Coming soon</Text>
 
                 <AiOutlineArrowRight
-                  fontSize="6rem"
+                  fontSize="2rem"
                   fontWeight="bold"
                   color="black"
                 />

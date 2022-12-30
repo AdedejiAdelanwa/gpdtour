@@ -5,6 +5,7 @@ import {
   AlertIcon,
   Box,
   Button,
+  Checkbox,
   Flex,
   FormControl,
   FormHelperText,
@@ -12,6 +13,7 @@ import {
   Heading,
   Input,
   Link,
+  LinkBox,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -36,6 +38,7 @@ const Registration = () => {
   const [amount, setAmount] = useState("");
   const [narration, setnarration] = useState("");
   const { isOpen, onOpen, onClose: onModalClose } = useDisclosure();
+  const [isChecked, setIsChecked] = useState(true);
 
   const config = {
     reference: new Date().getTime().toString(),
@@ -43,10 +46,9 @@ const Registration = () => {
     amount: Number(amount),
     phone,
     name,
-    publicKey: "pk_test_3bd1a6f51ba250c214ff525d89ef58af5a9c6a31",
+    publicKey: "pk_live_41dbc3d07d93bcf0dcbd29bcebfbdce746ba1669",
   };
   const onSuccess = () => {
-    // Implementation for whatever you want to do with reference and after success call.
     setName("");
     setEmail("");
     setPhone("");
@@ -55,7 +57,6 @@ const Registration = () => {
     onOpen();
   };
   const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log("closed");
   };
   const initializePayment = usePaystackPayment(config);
@@ -76,18 +77,6 @@ const Registration = () => {
       <Box height="100%" pos="relative" bg="white">
         <Navigation />
         <VStack w="100%" justifyContent="center" py="2rem">
-          <Alert status="warning" w={["95%", "40%"]} rounded="2px">
-            <AlertIcon />
-            PGD Tours promoted by Meristem is granted irrevocable, nonexclusive,
-            worldwide copyright license to download, copy, modify, distribute,
-            perform, and use photos from Golfing events for free, including for
-            commercial purposes, without permission from or attributing the
-            subject.
-          </Alert>
-          {/* <Text fontSize="1rem" w="40%" bg="rgba(255,204,0,0.3)" p="0.5rem">
-            <span>*</span>
-           
-          </Text> */}
           <VStack
             width={["100%", "30%"]}
             h={["auto", "80vh"]}
@@ -153,6 +142,19 @@ const Registration = () => {
                   placeholder="Meristem Open"
                 />
               </FormControl>
+              <Checkbox
+                checked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+              >
+                I have read and agreed to the PGD Tour{" "}
+                <Link
+                  href="/terms-and-conditions"
+                  color={"blue"}
+                  target="_blank"
+                >
+                  Terms and Conditions
+                </Link>
+              </Checkbox>
               <Button
                 w="100%"
                 py="2rem"
@@ -160,6 +162,7 @@ const Registration = () => {
                 color="white"
                 fontSize="1.6rem"
                 textTransform="uppercase"
+                disabled={isChecked}
                 onClick={() => {
                   initializePayment(onSuccess, onClose);
                 }}

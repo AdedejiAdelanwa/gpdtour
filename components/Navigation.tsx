@@ -11,7 +11,7 @@ import {
   useDisclosure,
   IconButton,
 } from "@chakra-ui/react";
-import CompLogo from "../public/assets/golf_tour_logo.svg";
+import CompLogo from "../public/assets/pgdtour-golf-logo.svg";
 
 import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";

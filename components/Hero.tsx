@@ -9,6 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import golfers from "../public/assets/golfers.png";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -56,7 +57,7 @@ export const Hero = () => {
             _hover={{ bg: "brand.bottlegreen" }}
             textTransform="uppercase"
           >
-            Learn more
+            <Link href="/registration">Register Here</Link>
           </Button>
         </VStack>
       </VStack>

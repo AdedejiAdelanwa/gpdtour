@@ -1,14 +1,12 @@
 import { Card, CardBody, Flex, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import OlopadePic from "../public/assets/olapade.png";
-import FrancisPic from "../public/assets/francis.png";
-import OchePic from "../public/assets/Oche.png";
+import Leader from "../public/assets/leader.svg";
 
 export const ProLeaders = () => {
   const topLeaders = [
-    { name: "olopade sunday", rank: 1, photo: OlopadePic },
-    { name: "francis epe", rank: 2, photo: FrancisPic },
-    { name: "oche odoh", rank: 3, photo: OchePic },
+    { name: "John Doe", rank: 1, photo: Leader },
+    { name: "John Doe", rank: 2, photo: Leader },
+    { name: "John Doe", rank: 3, photo: Leader },
   ];
   return (
     <VStack
@@ -22,7 +20,7 @@ export const ProLeaders = () => {
       spacing="3rem"
     >
       <Text fontSize="2rem" textAlign="left" color="black" mb="3rem">
-        PRO-AM LEADERS
+        LEADERBOARD
       </Text>
       <Flex
         w="80%"

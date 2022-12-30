@@ -13,7 +13,7 @@ import { BiArrowToRight } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const News = () => {
-  const headings = ["news", "ranking", "leadership"];
+  const headings = ["news", "ranking"];
   return (
     <VStack
       w={"full"}
@@ -27,7 +27,7 @@ export const News = () => {
         TOP STORIES
       </Text>
       <Flex
-        w="80%"
+        w="60%"
         direction={["column", "row"]}
         alignItems="center"
         justifyContent="space-around"

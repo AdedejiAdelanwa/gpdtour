@@ -131,7 +131,7 @@ const Registration = () => {
                   placeholder="Select amount"
                 >
                   <option value="1000000">10,000 (Pro)</option>
-                  <option value="1500000">15,000(Amateur 1)</option>
+                  <option value="1000000">10,000(Amateur CAT 1)</option>
                 </Select>
               </FormControl>
               <FormControl mb="1.5rem" isRequired>

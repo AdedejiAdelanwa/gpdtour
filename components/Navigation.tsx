@@ -117,9 +117,9 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/"
+          href="/prize"
         >
-          PLAYERS
+          PRIZE
         </Link>
         <Link
           p="1rem"
@@ -212,9 +212,9 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/"
+            href="/prize"
           >
-            PLAYERS
+            PRIZE
           </Link>
           <Link
             p="1rem"

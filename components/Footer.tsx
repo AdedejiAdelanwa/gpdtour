@@ -97,9 +97,9 @@ export const Footer = () => {
               backgroundColor: "brand.leafgreen",
               borderRadius: "3px",
             }}
-            href="/"
+            href="/prize"
           >
-            PLAYERS
+            PRIZE
           </Link>
           <Link
             p="1rem"

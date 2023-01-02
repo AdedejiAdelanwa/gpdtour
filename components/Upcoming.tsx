@@ -10,8 +10,8 @@ import {
 
 export const Upcoming = () => {
   const events = [
-    { name: "custodian classic", date: "MARCH 20TH -23RD, 2023" },
-    { name: "etranzact open", date: "APRIL 20TH - 23RD, 2023" },
+    { name: "custodian classic", date: "Coming soon" },
+    { name: "etranzact open", date: "Coming soon" },
   ];
   return (
     <VStack

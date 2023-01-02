@@ -54,6 +54,29 @@ export default function Terms() {
                 for free, including for commercial purposes, without permission
                 from or attributing the subject.
               </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                The event is a one field event (Regular, Seniors & Ladies) with
+                tees recognition*
+              </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                The tour will use the best 2nd round of the 36holes as count
+                back for cutline should there be ties at the 30th position
+              </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                In the case of a Championship tie, a 3 holes gross play-off will
+                be played as a tie breaker
+              </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                Registration fee in no refundable
+              </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                Registration ends January 20th, 2023
+              </ListItem>
             </List>
           </VStack>
         </Flex>

@@ -77,6 +77,11 @@ export default function Terms() {
                 <ListIcon as={GiGolfFlag} color="green.500" />
                 Registration ends January 20th, 2023
               </ListItem>
+              <ListItem>
+                <ListIcon as={GiGolfFlag} color="green.500" />
+                Other tournament/event rules will be determined by the Tour
+                Chief in accordance with best practices
+              </ListItem>
             </List>
           </VStack>
         </Flex>

@@ -27,13 +27,14 @@ export default function Terms() {
       </Head>
       <Box height="100%" pos="relative">
         <Navigation />
-        <Flex justifyContent="center" py={["1.5rem", "3rem"]}>
+        <Flex justifyContent="center" py={["1.5rem", "3rem"]} height="auto">
           <VStack
             h={"80vh"}
             w={["100%", "40%"]}
             border="1px solid grey"
             rounded="2px"
             p="10px"
+            overflow="auto"
           >
             <Heading>Terms and Conditions</Heading>
             <List spacing={10} fontSize="1.4rem">

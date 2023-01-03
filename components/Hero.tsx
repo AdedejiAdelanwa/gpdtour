@@ -44,7 +44,7 @@ export const Hero = () => {
           </Box>
 
           <Text w="35rem" fontSize="1.5rem">
-            a 3-Day golf Tournament which holds between the 26th -28th of
+            a 3-Day Pro-Am Tournament which holds between the 26th -28th of
             January 2023 at Lakowe Lakes golf and Country Estate, Lagos.
           </Text>
 

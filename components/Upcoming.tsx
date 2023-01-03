@@ -7,6 +7,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import GolfMeristem from "../public/assets/golf-ball.jpg";
 
 export const Upcoming = () => {
   const events = [
@@ -17,9 +18,7 @@ export const Upcoming = () => {
     <VStack
       w={"full"}
       h={["auto", "60vh"]}
-      backgroundImage={
-        "url(https://images.unsplash.com/photo-1576555928619-03d62a29e4a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGdvbGZ8ZW58MHx8MHx8&auto=format&fit=crop&w=1350&q=60)"
-      }
+      backgroundImage={`url(${GolfMeristem.src})`}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
       py={["2.5rem", 0]}

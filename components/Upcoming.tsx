@@ -10,8 +10,8 @@ import {
 
 export const Upcoming = () => {
   const events = [
-    { name: "custodian classic", date: "Coming soon" },
-    { name: "etranzact open", date: "Coming soon" },
+    { name: "other tournaments", date: "Coming soon" },
+    //{ name: "etranzact open", date: "Coming soon" },
   ];
   return (
     <VStack

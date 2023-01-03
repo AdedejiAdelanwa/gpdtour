@@ -1,14 +1,14 @@
 import { Card, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import Custodian from "../public/assets/custodian-logo.svg";
-import Etranz from "../public/assets/etranz-logo.svg";
-import Pepsi from "../public/assets/Pepsi-Logo.svg";
-import Polaris from "../public/assets/Polaris-Bank.svg";
+// import Custodian from "../public/assets/custodian-logo.svg";
+// import Etranz from "../public/assets/etranz-logo.svg";
+// import Pepsi from "../public/assets/Pepsi-Logo.svg";
+// import Polaris from "../public/assets/Polaris-Bank.svg";
 import Meristem from "../public/assets/msl-logo.svg";
 import Lakowe from "../public/assets/lakowe-logo.svg";
 
 export const Sponsors = () => {
-  const sponsors = [Custodian, Etranz, Pepsi, Polaris, Meristem, Lakowe];
+  const sponsors = [Meristem, Lakowe];
   return (
     <VStack
       w={"full"}

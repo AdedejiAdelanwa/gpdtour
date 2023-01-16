@@ -26,7 +26,7 @@ export const Navigation = () => {
         px={["1rem", "2rem", "8rem"]}
         h={["5rem", "7rem", "15rem"]}
       >
-        <Box boxSize={["4rem", "6rem", "15rem"]}>
+        <Box boxSize={["6rem", "8rem", "15rem"]}>
           <Image src={CompLogo} alt="PGD tour logo" />
         </Box>
         <Flex

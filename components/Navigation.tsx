@@ -92,8 +92,8 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          // href="https://forms.gle/ZDSVRUhJGcbpB3i19"
-          href="/registration"
+          href="https://forms.gle/ZDSVRUhJGcbpB3i19"
+          //href="/registration"
         >
           REGISTRATION
         </Link>
@@ -188,7 +188,8 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/registration"
+            href="https://forms.gle/ZDSVRUhJGcbpB3i19"
+            //href="/registration"
           >
             REGRISTRATION
           </Link>

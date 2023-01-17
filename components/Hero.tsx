@@ -57,7 +57,9 @@ export const Hero = () => {
             _hover={{ bg: "brand.bottlegreen" }}
             textTransform="uppercase"
           >
-            <Link href="/registration">Register Here</Link>
+            <Link href="https://forms.gle/ZDSVRUhJGcbpB3i19">
+              Register Here
+            </Link>
           </Button>
         </VStack>
       </VStack>

@@ -1,14 +1,15 @@
 import { Card, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-// import Farmfresh from "../public/assets/farmfresh.jpeg";
-// import UAC from "../public/assets/uac.png";
+import Farmfresh from "../public/assets/farmf.png";
+import Refresh from "../public/assets/refresh.png";
+import UAC from "../public/assets/uac-logo.svg";
 // import Pepsi from "../public/assets/Pepsi-Logo.svg";
 // import Polaris from "../public/assets/Polaris-Bank.svg";
 import Meristem from "../public/assets/msl-logo.svg";
 import Lakowe from "../public/assets/lakowe-logo.svg";
 
 export const Sponsors = () => {
-  const sponsors = [Meristem, Lakowe];
+  const sponsors = [Meristem, Lakowe, Farmfresh, Refresh, UAC];
   return (
     <VStack
       w={"full"}
@@ -31,7 +32,7 @@ export const Sponsors = () => {
         direction={["column", "row"]}
       >
         {sponsors.map((sponsor, i) => (
-          <Image height={100} key={i} src={sponsor} alt="sponsor" />
+          <Image width={130} key={i} src={sponsor} alt="sponsor" />
         ))}
       </Flex>
     </VStack>

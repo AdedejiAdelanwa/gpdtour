@@ -39,6 +39,7 @@ const Registration = () => {
   const [narration, setnarration] = useState("");
   const { isOpen, onOpen, onClose: onModalClose } = useDisclosure();
   const [isChecked, setIsChecked] = useState(true);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
 
   const config = {
     reference: new Date().getTime().toString(),
@@ -85,91 +86,95 @@ const Registration = () => {
             px="1rem"
           >
             <Heading>Registration </Heading>
-            <form style={{ fontSize: "1.6rem", width: "100%" }}>
-              <FormControl mb="1.5rem" isRequired>
-                <FormLabel fontSize="1.6rem">Name</FormLabel>
-                <Input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  py="1.8rem"
-                  type="text"
-                />
-                <FormHelperText fontSize="1.2rem">
-                  Enter your official name
-                </FormHelperText>
-              </FormControl>
-              <FormControl mb="1.5rem" isRequired>
-                <FormLabel fontSize="1.6rem">Email</FormLabel>
-                <Input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  py="1.8rem"
-                  type="email"
-                />
-                <FormHelperText fontSize="1.2rem">
-                  Enter a valid email
-                </FormHelperText>
-              </FormControl>
-              <FormControl mb="1.5rem" isRequired>
-                <FormLabel fontSize="1.6rem">Phone Number</FormLabel>
-                <Input
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  py="1.8rem"
-                  type="tel"
-                />
-                <FormHelperText fontSize="1.2rem">
-                  Enter a functional phone number
-                </FormHelperText>
-              </FormControl>
-              <FormControl mb="1.5rem" isRequired>
-                <FormLabel fontSize="1.6rem">Amount</FormLabel>
-                <Select
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+            {isRegistrationOpen ? (
+              <form style={{ fontSize: "1.6rem", width: "100%" }}>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Name</FormLabel>
+                  <Input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    py="1.8rem"
+                    type="text"
+                  />
+                  <FormHelperText fontSize="1.2rem">
+                    Enter your official name
+                  </FormHelperText>
+                </FormControl>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Email</FormLabel>
+                  <Input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    py="1.8rem"
+                    type="email"
+                  />
+                  <FormHelperText fontSize="1.2rem">
+                    Enter a valid email
+                  </FormHelperText>
+                </FormControl>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Phone Number</FormLabel>
+                  <Input
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    py="1.8rem"
+                    type="tel"
+                  />
+                  <FormHelperText fontSize="1.2rem">
+                    Enter a functional phone number
+                  </FormHelperText>
+                </FormControl>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Amount</FormLabel>
+                  <Select
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    fontSize="1.6rem"
+                    placeholder="Select amount"
+                  >
+                    <option value="1015000">10,000 (Pro)</option>
+                    <option value="1015000">10,000(Amateur CAT 1)</option>
+                  </Select>
+                </FormControl>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Narration</FormLabel>
+                  <Textarea
+                    value={narration}
+                    onChange={(e) => setnarration(e.target.value)}
+                    placeholder="Meristem Open"
+                  />
+                </FormControl>
+                <Checkbox
+                  checked={isChecked}
+                  onChange={() => setIsChecked(!isChecked)}
+                >
+                  I have read and agreed to the PGD Tour{" "}
+                  <Link
+                    href="/terms-and-conditions"
+                    color={"blue"}
+                    target="_blank"
+                  >
+                    Terms and Conditions
+                  </Link>
+                </Checkbox>
+                <Button
+                  w="100%"
+                  py="2rem"
+                  bg="brand.leafgreen"
+                  color="white"
                   fontSize="1.6rem"
-                  placeholder="Select amount"
+                  textTransform="uppercase"
+                  disabled={isChecked}
+                  onClick={() => {
+                    initializePayment(onSuccess, onClose);
+                  }}
                 >
-                  <option value="1015000">10,000 (Pro)</option>
-                  <option value="1015000">10,000(Amateur CAT 1)</option>
-                </Select>
-              </FormControl>
-              <FormControl mb="1.5rem" isRequired>
-                <FormLabel fontSize="1.6rem">Narration</FormLabel>
-                <Textarea
-                  value={narration}
-                  onChange={(e) => setnarration(e.target.value)}
-                  placeholder="Meristem Open"
-                />
-              </FormControl>
-              <Checkbox
-                checked={isChecked}
-                onChange={() => setIsChecked(!isChecked)}
-              >
-                I have read and agreed to the PGD Tour{" "}
-                <Link
-                  href="/terms-and-conditions"
-                  color={"blue"}
-                  target="_blank"
-                >
-                  Terms and Conditions
-                </Link>
-              </Checkbox>
-              <Button
-                w="100%"
-                py="2rem"
-                bg="brand.leafgreen"
-                color="white"
-                fontSize="1.6rem"
-                textTransform="uppercase"
-                disabled={isChecked}
-                onClick={() => {
-                  initializePayment(onSuccess, onClose);
-                }}
-              >
-                Pay Now
-              </Button>
-            </form>
+                  Pay Now
+                </Button>
+              </form>
+            ) : (
+              <Text>We are sorry registration for the tour is closed.</Text>
+            )}
           </VStack>
         </VStack>
 

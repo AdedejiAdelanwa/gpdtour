@@ -2,7 +2,7 @@ import { Card, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import Farmfresh from "../public/assets/farmf.png";
 import Refresh from "../public/assets/refresh.png";
-import UAC from "../public/assets/uac-logo.svg";
+import UAC from "../public/assets/uac-log.png";
 // import Pepsi from "../public/assets/Pepsi-Logo.svg";
 // import Polaris from "../public/assets/Polaris-Bank.svg";
 import Meristem from "../public/assets/msl-logo.svg";

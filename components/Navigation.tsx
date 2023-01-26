@@ -80,7 +80,9 @@ export const Navigation = () => {
             backgroundColor: "brand.deepbottle",
             borderRadius: "3px",
           }}
-          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="/assets/meristem-open-draw.pdf"
         >
           SCHEDULE
         </Link>
@@ -176,7 +178,9 @@ export const Navigation = () => {
               backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="/assets/meristem-open-draw.pdf"
           >
             SCHEDULE
           </Link>

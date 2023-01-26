@@ -57,10 +57,12 @@ export const Footer = () => {
             alignItems="center"
             _hover={{
               textDecoration: "none",
-              backgroundColor: "brand.leafgreen",
+              backgroundColor: "brand.deepbottle",
               borderRadius: "3px",
             }}
-            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="/assets/meristem-open-draw.pdf"
           >
             SCHEDULE
           </Link>

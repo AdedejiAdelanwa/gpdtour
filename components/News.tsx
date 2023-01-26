@@ -44,9 +44,11 @@ export const News = () => {
             as="iframe"
             src={news}
             width="30rem"
+            height="32rem"
             sx={{
               aspectRatio: "16/9",
             }}
+            borderRadius="1.8rem"
           />
 
           // <Card

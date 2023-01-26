@@ -39,15 +39,16 @@ export const News = () => {
         gap="2.5rem"
       >
         {newsLinks.map((news) => (
-          <AspectRatio
+          <Box
             key={news}
-            maxW="30rem"
-            borderRadius="1.8rem"
-            boxShadow="inset 0 0 40rem 1rem #000"
-            ratio={16 / 9}
-          >
-            <iframe title="PGD tour" src={news} allowFullScreen />
-          </AspectRatio>
+            as="iframe"
+            src={news}
+            width="30rem"
+            sx={{
+              aspectRatio: "16/9",
+            }}
+          />
+
           // <Card
           //   w="30rem"
           //   height="32rem"

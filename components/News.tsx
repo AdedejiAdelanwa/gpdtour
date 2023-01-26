@@ -8,12 +8,19 @@ import {
   Text,
   VStack,
   Box,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { BiArrowToRight } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const News = () => {
   const headings = ["news", "ranking"];
+
+  const newsLinks = [
+    "https://youtu.be/g-sL422angY",
+    "https://youtu.be/2CcnG4Z_SjM",
+    "https://youtu.be/BNtoNiwt7kM",
+  ];
   return (
     <VStack
       w={"full"}
@@ -33,46 +40,55 @@ export const News = () => {
         justifyContent="space-around"
         gap="2.5rem"
       >
-        {headings.map((heading) => (
-          <Card
-            w="30rem"
-            height="32rem"
-            key={heading}
+        {newsLinks.map((news) => (
+          <AspectRatio
+            key={news}
+            maxW="30rem"
             borderRadius="1.8rem"
-            backgroundImage={
-              "url(https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z29sZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1350&q=60)"
-            }
             boxShadow="inset 0 0 40rem 1rem #000"
-            backgroundSize={"cover"}
-            backgroundPosition={"center center"}
+            ratio={16 / 9}
           >
-            <CardHeader
-              textTransform="uppercase"
-              color="#CBD97C"
-              textAlign="right"
-              fontSize="1.5rem"
-            >
-              {heading}
-            </CardHeader>
-            <CardBody></CardBody>
-            <CardFooter px="3rem">
-              <Flex
-                bg="white"
-                alignItems="center"
-                gap="1rem"
-                p="1rem"
-                rounded="5px"
-              >
-                <Text>Coming soon</Text>
+            <iframe title="PGD tour" src={news} allowFullScreen />
+          </AspectRatio>
+          // <Card
+          //   w="30rem"
+          //   height="32rem"
+          //   key={heading}
+          //   borderRadius="1.8rem"
+          //   backgroundImage={
+          //     "url(https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z29sZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1350&q=60)"
+          //   }
+          //   boxShadow="inset 0 0 40rem 1rem #000"
+          //   backgroundSize={"cover"}
+          //   backgroundPosition={"center center"}
+          // >
+          //   <CardHeader
+          //     textTransform="uppercase"
+          //     color="#CBD97C"
+          //     textAlign="right"
+          //     fontSize="1.5rem"
+          //   >
+          //     {heading}
+          //   </CardHeader>
+          //   <CardBody></CardBody>
+          //   <CardFooter px="3rem">
+          //     <Flex
+          //       bg="white"
+          //       alignItems="center"
+          //       gap="1rem"
+          //       p="1rem"
+          //       rounded="5px"
+          //     >
+          //       <Text>Coming soon</Text>
 
-                <AiOutlineArrowRight
-                  fontSize="2rem"
-                  fontWeight="bold"
-                  color="black"
-                />
-              </Flex>
-            </CardFooter>
-          </Card>
+          //       <AiOutlineArrowRight
+          //         fontSize="2rem"
+          //         fontWeight="bold"
+          //         color="black"
+          //       />
+          //     </Flex>
+          //   </CardFooter>
+          // </Card>
         ))}
       </Flex>
     </VStack>

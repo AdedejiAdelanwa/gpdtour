@@ -14,10 +14,7 @@ import { BiArrowToRight } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const News = () => {
-  const headings = ["news", "ranking"];
-  //www.youtube.com/embed/2CcnG4Z_SjM
-
-  https: const newsLinks = [
+  const newsLinks = [
     "https://www.youtube.com/embed/g-sL422angY",
     "https://www.youtube.com/embed/2CcnG4Z_SjM",
     "https://www.youtube.com/embed/BNtoNiwt7kM",

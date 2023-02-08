@@ -1,12 +1,14 @@
 import { Card, CardBody, Flex, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import Leader from "../public/assets/leader.svg";
+import Torgah from "../public/assets/torgah-vincent.jpeg";
+import Olopade from "../public/assets/olopade.jpeg";
+import Francis from "../public/assets/francis.jpeg";
 
 export const ProLeaders = () => {
   const topLeaders = [
-    { name: "John Doe", rank: 1, photo: Leader },
-    { name: "John Doe", rank: 2, photo: Leader },
-    { name: "John Doe", rank: 3, photo: Leader },
+    { name: "Epe Francis", rank: "Pro winner", photo: Francis },
+    { name: "Torgah Vincent", rank: "First runner-up", photo: Torgah },
+    { name: "Olapade Sunday", rank: "Second runner-up", photo: Olopade },
   ];
   return (
     <VStack
@@ -39,31 +41,44 @@ export const ProLeaders = () => {
           >
             <Card
               pos="relative"
-              align="center"
-              w="25rem"
-              height="25rem"
+              //align="center"
+              justifyContent="space-evenly"
+              w="27rem"
+              height="30rem"
               bg="brand.deepbottle"
               backgroundSize={"cover"}
               backgroundPosition={"center center"}
             >
-              <CardBody textTransform="uppercase">
+              <CardBody
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="space-between"
+                textTransform="uppercase"
+              >
                 <Image
-                  style={{ position: "absolute", left: "10%", top: "-15%" }}
+                  style={{
+                    // position: "absolute",
+                    // left: "10%",
+                    // top: "-15%",
+
+                    borderRadius: "50%",
+                  }}
                   width="200"
                   height="200"
-                  src={leader.photo}
+                  src={leader.photo.src}
                   alt={leader.name}
                 />
                 <Text
-                  pos="absolute"
-                  left="44%"
-                  bottom="-5%"
+                  //pos="absolute"
+                  //left="10%"
+                  //bottom="-5%"
                   color="brand.deepbottle"
                   bg="#A6B14F"
                   py="0.5rem"
                   px="1.2rem"
-                  rounded="50%"
                   fontWeight="bold"
+                  rounded="2px"
                 >
                   {leader.rank}
                 </Text>

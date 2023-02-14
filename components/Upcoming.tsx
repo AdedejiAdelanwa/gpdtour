@@ -7,7 +7,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import GolfMeristem from "../public/assets/golf-ball.jpg";
+import GolfMeristem from "../public/assets/blank-ball.png";
 
 export const Upcoming = () => {
   const events = [
@@ -25,7 +25,7 @@ export const Upcoming = () => {
       justifyContent="center"
       spacing="3rem"
     >
-      <Text fontSize="2rem" textAlign="left" color={["black", "white"]}>
+      <Text fontSize="2rem" textAlign="left" color="black">
         UPCOMING EVENTS
       </Text>
       <Flex
@@ -34,7 +34,7 @@ export const Upcoming = () => {
         alignItems="center"
         justifyContent="space-around"
         gap="2.5rem"
-        overflowX="scroll"
+        overflowX="auto"
       >
         {events.map((event) => (
           <Card

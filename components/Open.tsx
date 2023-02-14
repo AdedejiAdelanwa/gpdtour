@@ -41,7 +41,7 @@ export const Open = () => {
             </Text>
             <Image width="200" src={MSLLogo} alt="host brand" />
             <Text fontSize={["2xl", "4xl"]} letterSpacing="1rem">
-              OPEN
+              CLASSIC
             </Text>
             <span
               style={{
@@ -73,7 +73,7 @@ export const Open = () => {
               textAlign: "center",
             }}
           >
-            26th-28th January, 2023
+            Coming Soon
           </span>
         </VStack>
       </VStack>

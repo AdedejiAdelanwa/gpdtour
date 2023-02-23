@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import {
   Alert,
@@ -29,38 +29,60 @@ import {
 } from "@chakra-ui/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
-import { usePaystackPayment } from "react-paystack";
+import axios from "axios";
+//import { usePaystackPayment } from "react-paystack";
 
 const Registration = () => {
-  const [name, setName] = useState("");
+  const [customerFirstName, setCustomerFirstName] = useState("");
+  const [customerLastName, setCustomerLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [customerPhoneNumber, setCustomerPhoneNumber] = useState("");
   const [amount, setAmount] = useState("");
-  const [narration, setnarration] = useState("");
-  const { isOpen, onOpen, onClose: onModalClose } = useDisclosure();
+  const [currency, setCurrency] = useState("");
+  //const { isOpen, onOpen, onClose: onModalClose } = useDisclosure();
   const [isChecked, setIsChecked] = useState(true);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
+  const base_url = "https://api.public.credodemo.com";
 
-  const config = {
-    reference: new Date().getTime().toString(),
-    email,
-    amount: Number(amount),
-    phone,
-    name,
-    publicKey: "pk_live_41dbc3d07d93bcf0dcbd29bcebfbdce746ba1669",
+  const payCredo = async () => {
+    const generateRandomNumber = (min: number, max: number) =>
+      Math.floor(Math.random() * (max - min) + min);
+
+    const reference = `pgdtour${generateRandomNumber(
+      10,
+      60
+    )}cus${generateRandomNumber(10, 90)}`;
+
+    const parsedAmount = Number(amount);
+    console.log(parsedAmount);
+
+    try {
+      const response = await axios({
+        method: "post",
+        url: `${base_url}/transaction/initialize`,
+        headers: {
+          ContentType: "application/JSON",
+          Authorization: "0PUB0227IGJvqe9zc4lFNBcxwxglxONP",
+        },
+        data: {
+          amount: parsedAmount,
+          bearer: 0,
+          callbackUrl: "https://example.com/",
+          channels: ["card", "bank"],
+          currency,
+          customerFirstName,
+          customerLastName,
+          customerPhoneNumber,
+          email,
+          reference,
+        },
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  const onSuccess = () => {
-    setName("");
-    setEmail("");
-    setPhone("");
-    setAmount("");
-    console.log("Hello succes");
-    onOpen();
-  };
-  const onClose = () => {
-    console.log("closed");
-  };
-  const initializePayment = usePaystackPayment(config);
+
   return (
     <>
       <Head>
@@ -84,20 +106,33 @@ const Registration = () => {
             bg="white"
             py={["1.5rem", "3rem"]}
             px="1rem"
+            overflowY="auto"
           >
             <Heading>Registration </Heading>
             {isRegistrationOpen ? (
               <form style={{ fontSize: "1.6rem", width: "100%" }}>
                 <FormControl mb="1.5rem" isRequired>
-                  <FormLabel fontSize="1.6rem">Name</FormLabel>
+                  <FormLabel fontSize="1.6rem">First Name</FormLabel>
                   <Input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={customerFirstName}
+                    onChange={(e) => setCustomerFirstName(e.target.value)}
                     py="1.8rem"
                     type="text"
                   />
                   <FormHelperText fontSize="1.2rem">
-                    Enter your official name
+                    Enter your first name
+                  </FormHelperText>
+                </FormControl>
+                <FormControl mb="1.5rem" isRequired>
+                  <FormLabel fontSize="1.6rem">Last Name</FormLabel>
+                  <Input
+                    value={customerLastName}
+                    onChange={(e) => setCustomerLastName(e.target.value)}
+                    py="1.8rem"
+                    type="text"
+                  />
+                  <FormHelperText fontSize="1.2rem">
+                    Enter your surname
                   </FormHelperText>
                 </FormControl>
                 <FormControl mb="1.5rem" isRequired>
@@ -115,8 +150,8 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">Phone Number</FormLabel>
                   <Input
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={customerPhoneNumber}
+                    onChange={(e) => setCustomerPhoneNumber(e.target.value)}
                     py="1.8rem"
                     type="tel"
                   />
@@ -125,30 +160,36 @@ const Registration = () => {
                   </FormHelperText>
                 </FormControl>
                 <FormControl mb="1.5rem" isRequired>
-                  <FormLabel fontSize="1.6rem">Amount</FormLabel>
+                  <FormLabel fontSize="1.6rem">Currency</FormLabel>
                   <Select
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
+                    value={currency}
+                    onChange={(e) => {
+                      setCurrency(e.target.value);
+                      currency === "USD"
+                        ? setAmount("1500")
+                        : setAmount("1000000");
+                    }}
                     fontSize="1.6rem"
-                    placeholder="Select amount"
+                    placeholder="choose currency"
                   >
-                    <option value="1015000">10,000 (Pro)</option>
-                    <option value="1015000">10,000(Amateur CAT 1)</option>
+                    <option value="NGN">Naira</option>
+                    <option value="USD">Dollar</option>
                   </Select>
                 </FormControl>
                 <FormControl mb="1.5rem" isRequired>
-                  <FormLabel fontSize="1.6rem">Narration</FormLabel>
-                  <Textarea
-                    value={narration}
-                    onChange={(e) => setnarration(e.target.value)}
-                    placeholder="Meristem Open"
+                  <FormLabel fontSize="1.6rem">Amount</FormLabel>
+                  <Input
+                    value={currency === "USD" ? "15" : "10000"}
+                    py="1.8rem"
+                    type="number"
+                    disabled
                   />
                 </FormControl>
                 <Checkbox
                   checked={isChecked}
                   onChange={() => setIsChecked(!isChecked)}
                 >
-                  I have read and agreed to the PGD Tour{" "}
+                  I have read and agreed to the PGD Tour
                   <Link
                     href="/terms-and-conditions"
                     color={"blue"}
@@ -165,9 +206,7 @@ const Registration = () => {
                   fontSize="1.6rem"
                   textTransform="uppercase"
                   disabled={isChecked}
-                  onClick={() => {
-                    initializePayment(onSuccess, onClose);
-                  }}
+                  onClick={payCredo}
                 >
                   Pay Now
                 </Button>
@@ -179,7 +218,7 @@ const Registration = () => {
         </VStack>
 
         <Footer />
-        <Modal isOpen={isOpen} onClose={onClose} size="3xl" isCentered>
+        {/* <Modal isOpen={isOpen} onClose={onClose} size="3xl" isCentered>
           <ModalOverlay />
           <ModalContent fontSize="1.6rem">
             <ModalHeader fontSize="3xl" textAlign="center">
@@ -213,7 +252,7 @@ const Registration = () => {
               </Button>
             </ModalFooter>
           </ModalContent>
-        </Modal>
+        </Modal> */}
       </Box>
     </>
   );

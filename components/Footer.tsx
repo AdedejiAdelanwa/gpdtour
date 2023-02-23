@@ -19,7 +19,7 @@ export const Footer = () => {
     <VStack
       bg="brand.deepbottle"
       py="2rem"
-      h={["auto", "40vh"]}
+      h={["auto", "30vh"]}
       justifyContent="space-between"
     >
       <Flex

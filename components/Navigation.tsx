@@ -24,7 +24,7 @@ export const Navigation = () => {
         alignItems="center"
         justifyContent="space-between"
         px={["1rem", "2rem", "8rem"]}
-        h={["5rem", "7rem", "15rem"]}
+        h={["5rem", "7rem", "10rem"]}
       >
         <Box boxSize={["6rem", "8rem", "15rem"]}>
           <Image src={CompLogo} alt="PGD tour logo" />

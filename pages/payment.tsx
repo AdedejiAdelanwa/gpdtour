@@ -1,36 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import {
-  Alert,
-  AlertIcon,
   Box,
   Button,
   Checkbox,
-  Flex,
   FormControl,
   FormHelperText,
   FormLabel,
   Heading,
   Input,
   Link,
-  LinkBox,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Select,
   Text,
-  Textarea,
-  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import axios from "axios";
-//import { usePaystackPayment } from "react-paystack";
 
 const Registration = () => {
   const [customerFirstName, setCustomerFirstName] = useState("");
@@ -42,9 +28,11 @@ const Registration = () => {
   //const { isOpen, onOpen, onClose: onModalClose } = useDisclosure();
   const [isChecked, setIsChecked] = useState(true);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
+  const [isRequesting, setIsRequesting] = useState(false);
   const base_url = "https://api.public.credodemo.com";
 
   const payCredo = async () => {
+    setIsRequesting(true);
     const generateRandomNumber = (min: number, max: number) =>
       Math.floor(Math.random() * (max - min) + min);
 
@@ -57,12 +45,15 @@ const Registration = () => {
     console.log(parsedAmount);
 
     try {
-      const response = await axios({
+      const {
+        data: { data },
+      } = await axios({
         method: "post",
-        url: `${base_url}/transaction/initialize`,
+        // url: `${process.env.CREDO_BASE_URL}/transaction/initialize`,
+        url: base_url,
         headers: {
           ContentType: "application/JSON",
-          Authorization: "0PUB0227IGJvqe9zc4lFNBcxwxglxONP",
+          Authorization: `0PUB0227IGJvqe9zc4lFNBcxwxglxONP`,
         },
         data: {
           amount: parsedAmount,
@@ -77,12 +68,13 @@ const Registration = () => {
           reference,
         },
       });
-      console.log(response);
+      setIsRequesting(false);
+      window.open(data.authorizationUrl);
     } catch (error) {
       console.log(error);
+      setIsRequesting(false);
     }
   };
-
   return (
     <>
       <Head>
@@ -114,6 +106,7 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">First Name</FormLabel>
                   <Input
+                    fontSize="16px"
                     value={customerFirstName}
                     onChange={(e) => setCustomerFirstName(e.target.value)}
                     py="1.8rem"
@@ -126,6 +119,7 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">Last Name</FormLabel>
                   <Input
+                    fontSize="16px"
                     value={customerLastName}
                     onChange={(e) => setCustomerLastName(e.target.value)}
                     py="1.8rem"
@@ -138,6 +132,7 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">Email</FormLabel>
                   <Input
+                    fontSize="16px"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     py="1.8rem"
@@ -150,6 +145,7 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">Phone Number</FormLabel>
                   <Input
+                    fontSize="16px"
                     value={customerPhoneNumber}
                     onChange={(e) => setCustomerPhoneNumber(e.target.value)}
                     py="1.8rem"
@@ -179,6 +175,7 @@ const Registration = () => {
                 <FormControl mb="1.5rem" isRequired>
                   <FormLabel fontSize="1.6rem">Amount</FormLabel>
                   <Input
+                    fontSize="16px"
                     value={currency === "USD" ? "15" : "10000"}
                     py="1.8rem"
                     type="number"
@@ -208,7 +205,7 @@ const Registration = () => {
                   disabled={isChecked}
                   onClick={payCredo}
                 >
-                  Pay Now
+                  {isRequesting ? "Processing..." : "Pay Now"}
                 </Button>
               </form>
             ) : (
@@ -216,43 +213,7 @@ const Registration = () => {
             )}
           </VStack>
         </VStack>
-
         <Footer />
-        {/* <Modal isOpen={isOpen} onClose={onClose} size="3xl" isCentered>
-          <ModalOverlay />
-          <ModalContent fontSize="1.6rem">
-            <ModalHeader fontSize="3xl" textAlign="center">
-              Payment Successful
-            </ModalHeader>
-            <ModalCloseButton />
-            <ModalBody p="2rem">
-              <Text>Kindly save this reference : {config.reference}</Text>
-              <Text mt="2rem">
-                <Link
-                  w="100%"
-                  bg="brand.leafgreen"
-                  py="1rem"
-                  px="2rem"
-                  color="white"
-                  ml="1rem"
-                  rounded="5px"
-                  _hover={{
-                    textDecoration: "none",
-                  }}
-                  href="https://forms.gle/ZDSVRUhJGcbpB3i19"
-                  isExternal
-                >
-                  Complete Registration
-                </Link>
-              </Text>
-            </ModalBody>
-            <ModalFooter>
-              <Button bg="red" color="white" mr={3} onClick={onModalClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal> */}
       </Box>
     </>
   );

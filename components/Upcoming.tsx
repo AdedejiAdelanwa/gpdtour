@@ -10,10 +10,7 @@ import {
 import GolfMeristem from "../public/assets/blank-ball.png";
 
 export const Upcoming = () => {
-  const events = [
-    { name: "other tournaments", date: "Coming soon" },
-    //{ name: "etranzact open", date: "Coming soon" },
-  ];
+  const events = [{ name: "Etranzact OPEN", date: "Coming soon" }];
   return (
     <VStack
       w={"full"}

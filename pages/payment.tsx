@@ -29,7 +29,7 @@ const Registration = () => {
   const [isChecked, setIsChecked] = useState(true);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
   const [isRequesting, setIsRequesting] = useState(false);
-  const base_url = "https://api.public.credodemo.com";
+  //const base_url = "https://api.public.credodemo.com";
 
   const payCredo = async () => {
     setIsRequesting(true);
@@ -49,11 +49,11 @@ const Registration = () => {
         data: { data },
       } = await axios({
         method: "post",
-        // url: `${process.env.CREDO_BASE_URL}/transaction/initialize`,
-        url: base_url,
+        url: `${process.env.NEXT_PUBLIC_CREDO_BASE_URL}/transaction/initialize`,
+        //url: base_url,
         headers: {
           ContentType: "application/JSON",
-          Authorization: `0PUB0227IGJvqe9zc4lFNBcxwxglxONP`,
+          Authorization: `${process.env.NEXT_PUBLIC_API_KEY}`,
         },
         data: {
           amount: parsedAmount,

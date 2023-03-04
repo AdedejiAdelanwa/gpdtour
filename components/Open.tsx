@@ -7,9 +7,10 @@ import {
   Stack,
   Text,
   VStack,
+  Image,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import MSLLogo from "../public/assets/msl-logo.svg";
+//import Image from "next/image";
+import Custodian from "../public/assets/custodian_logo.png";
 import Lakowe from "../public/assets/lakowe-logo.svg";
 
 export const Open = () => {
@@ -39,9 +40,15 @@ export const Open = () => {
             <Text fontSize={["3xl", "6xl"]} color={["black", "white"]}>
               Experience
             </Text>
-            <Image width="200" src={MSLLogo} alt="host brand" />
+            <Image
+              // width="200"
+              width="17rem"
+              height="12rem"
+              src={Custodian.src}
+              alt="host brand"
+            />
             <Text fontSize={["2xl", "4xl"]} letterSpacing="1rem">
-              CLASSIC
+              OPEN
             </Text>
             <span
               style={{
@@ -58,8 +65,11 @@ export const Open = () => {
               Live at
             </span>
           </VStack>
+          <Text fontSize={["2xl", "4xl"]} letterSpacing="1rem">
+            IKOYI CLUB 1938
+          </Text>
 
-          <Image width="200" src={Lakowe} alt="host brand" />
+          {/* <Image width="200" src={Lakowe} alt="host brand" /> */}
 
           <span
             style={{

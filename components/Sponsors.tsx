@@ -6,10 +6,10 @@ import UAC from "../public/assets/uac-log.png";
 // import Pepsi from "../public/assets/Pepsi-Logo.svg";
 // import Polaris from "../public/assets/Polaris-Bank.svg";
 import Meristem from "../public/assets/msl-logo.svg";
-import Lakowe from "../public/assets/lakowe-logo.svg";
+import IkoyiClub from "../public/assets/custodian_logosponsor.jpg";
 
 export const Sponsors = () => {
-  const sponsors = [Meristem, Lakowe, Farmfresh, Refresh, UAC];
+  const sponsors = [Meristem, IkoyiClub, Farmfresh, Refresh, UAC];
   return (
     <VStack
       w={"full"}

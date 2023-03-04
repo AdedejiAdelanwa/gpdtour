@@ -29,7 +29,6 @@ const Registration = () => {
   const [isChecked, setIsChecked] = useState(true);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
   const [isRequesting, setIsRequesting] = useState(false);
-  //const base_url = "https://api.public.credodemo.com";
 
   const payCredo = async () => {
     setIsRequesting(true);
@@ -42,7 +41,6 @@ const Registration = () => {
     )}cus${generateRandomNumber(10, 90)}`;
 
     const parsedAmount = Number(amount);
-    console.log(parsedAmount);
 
     try {
       const {
@@ -50,7 +48,7 @@ const Registration = () => {
       } = await axios({
         method: "post",
         url: `${process.env.NEXT_PUBLIC_CREDO_BASE_URL}/transaction/initialize`,
-        //url: base_url,
+
         headers: {
           ContentType: "application/JSON",
           Authorization: `${process.env.NEXT_PUBLIC_API_KEY}`,
@@ -58,7 +56,7 @@ const Registration = () => {
         data: {
           amount: parsedAmount,
           bearer: 0,
-          callbackUrl: "https://example.com/",
+          callbackUrl: "https://pgdtour.org/success-page",
           channels: ["card", "bank"],
           currency,
           customerFirstName,
@@ -71,7 +69,7 @@ const Registration = () => {
       setIsRequesting(false);
       window.open(data.authorizationUrl);
     } catch (error) {
-      console.log(error);
+      alert(error);
       setIsRequesting(false);
     }
   };
@@ -163,7 +161,7 @@ const Registration = () => {
                       setCurrency(e.target.value);
                       currency === "USD"
                         ? setAmount("1500")
-                        : setAmount("1000000");
+                        : setAmount("100000");
                     }}
                     fontSize="1.6rem"
                     placeholder="choose currency"
@@ -176,7 +174,7 @@ const Registration = () => {
                   <FormLabel fontSize="1.6rem">Amount</FormLabel>
                   <Input
                     fontSize="16px"
-                    value={currency === "USD" ? "15" : "10000"}
+                    value={currency === "USD" ? "15" : "1000"}
                     py="1.8rem"
                     type="number"
                     disabled

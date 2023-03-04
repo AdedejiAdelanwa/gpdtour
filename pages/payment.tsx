@@ -161,7 +161,7 @@ const Registration = () => {
                       setCurrency(e.target.value);
                       currency === "USD"
                         ? setAmount("1500")
-                        : setAmount("100000");
+                        : setAmount("1000000");
                     }}
                     fontSize="1.6rem"
                     placeholder="choose currency"
@@ -174,7 +174,7 @@ const Registration = () => {
                   <FormLabel fontSize="1.6rem">Amount</FormLabel>
                   <Input
                     fontSize="16px"
-                    value={currency === "USD" ? "15" : "1000"}
+                    value={currency === "USD" ? "15" : "10000"}
                     py="1.8rem"
                     type="number"
                     disabled

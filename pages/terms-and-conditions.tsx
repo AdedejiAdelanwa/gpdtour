@@ -41,7 +41,7 @@ export default function Terms() {
               <ListItem>
                 <ListIcon as={GiGolfFlag} color="green.500" />
                 Prize Money. The total prize money been Ten million naira less
-                10% Administrative and PGAN Levies.
+                10% Administrative fees.
               </ListItem>
               <ListItem>
                 <ListIcon as={GiGolfFlag} color="green.500" />
@@ -72,12 +72,9 @@ export default function Terms() {
               </ListItem>
               <ListItem>
                 <ListIcon as={GiGolfFlag} color="green.500" />
-                Registration fee in no refundable
+                Registration fee is non-refundable
               </ListItem>
-              <ListItem>
-                <ListIcon as={GiGolfFlag} color="green.500" />
-                Registration ends January 20th, 2023
-              </ListItem>
+
               <ListItem>
                 <ListIcon as={GiGolfFlag} color="green.500" />
                 Other tournament/event rules will be determined by the Tour

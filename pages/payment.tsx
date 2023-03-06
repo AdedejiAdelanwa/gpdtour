@@ -160,7 +160,7 @@ const Registration = () => {
                     onChange={(e) => {
                       setCurrency(e.target.value);
                       currency === "USD"
-                        ? setAmount("1500")
+                        ? setAmount("2200")
                         : setAmount("1000000");
                     }}
                     fontSize="1.6rem"
@@ -174,7 +174,7 @@ const Registration = () => {
                   <FormLabel fontSize="1.6rem">Amount</FormLabel>
                   <Input
                     fontSize="16px"
-                    value={currency === "USD" ? "15" : "10000"}
+                    value={currency === "USD" ? "22" : "10000"}
                     py="1.8rem"
                     type="number"
                     disabled

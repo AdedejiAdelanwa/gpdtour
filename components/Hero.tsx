@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import custodianMobile from "../public/assets/custodian-mobile.png";
-import custodianBg from "../public/assets/custodian-large.jpg";
+import custodianBg from "../public/assets/custodian-large.png";
 
 import Link from "next/link";
 // import { ImageUpload } from "../components/ImageUpload";
@@ -35,9 +35,7 @@ export const Hero = () => {
     <Flex
       w={"full"}
       h={["50vh", "80vh"]}
-      // backgroundImage={
-      //   "url(https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z29sZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1350&q=60)"
-      // }
+      alignItems="center"
       backgroundImage={
         isMobile ? `url(${custodianMobile.src})` : `url(${custodianBg.src})`
       }
@@ -48,9 +46,10 @@ export const Hero = () => {
     >
       <VStack
         w="full"
+        h={["100%", "50%"]}
         //spacing="2rem"
-        alignItems={"center"}
-        justifyContent={["flex-end", "center"]}
+        alignItems="flex-start"
+        justifyContent={["flex-end", "flex-end"]}
         color="black"
         //bg={["rgba(255,255,255,0.48)", "none"]}
         p="1.5rem"
@@ -66,13 +65,14 @@ export const Hero = () => {
           </Text> */}
 
         <Button
-          bg="white"
+          w={["100%", "40%"]}
+          bg="#9D1D32"
           fontSize="1.5rem"
           py="3rem"
           px="2.5rem"
           mt="2rem"
-          color="brand.leafgreen"
-          _hover={{ bg: "brand.bottlegreen", color: "white" }}
+          color="white"
+          _hover={{ bg: "white", color: "#9D1D32" }}
           textTransform="uppercase"
         >
           <Link href="https://forms.gle/ZDSVRUhJGcbpB3i19">Register Here</Link>

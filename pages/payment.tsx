@@ -68,8 +68,12 @@ const Registration = () => {
       });
       setIsRequesting(false);
       window.open(data.authorizationUrl);
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        alert(error.response.data.message);
+      }
+      alert(error.message);
+
       setIsRequesting(false);
     }
   };
